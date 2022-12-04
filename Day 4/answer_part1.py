@@ -7,7 +7,7 @@ lines = f.readlines()
 
 
 count = 0
-for line in lines: 
+for line in lines:
     line = line.strip()
     left,right = line.split(',')
     l1,l2 = left.split('-')
@@ -33,7 +33,6 @@ conn = http.client.HTTPSConnection("adventofcode.com")
 payload = str(count)
 
 headers = {
-
   'Cookie': 'session=sessionIDgoesHere'
 
 }
