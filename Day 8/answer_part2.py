@@ -59,7 +59,7 @@ for row in range(1,total_rows):
             top_score = row
         else:
             x = row - 1
-            while current > graph[x][col] and x > 1:
+            while current > graph[x][col] and x > 0:
                 x -= 1
             top_score = row - x
         
@@ -68,21 +68,21 @@ for row in range(1,total_rows):
             bottom_score = len(graph) - row - 1
         else:
             x = row + 1
-            while  x < len(graph) - 1 and current > graph[x][col]:
+            while  x < len(graph) and current > graph[x][col]:
                 x += 1
             bottom_score = x - row
         
         scenic_score = left_score * right_score * top_score * bottom_score
         result[row][col] = scenic_score
 
-        print(left_score, right_score, top_score, bottom_score, scenic_score)
+        #print(left_score, right_score, top_score, bottom_score, scenic_score)
         #print()
         
 maximum = 0
 for each in result:
     #print(max(each))
-    #maximum = max(max(each),maximum)
-    print(each)
+    maximum = max(max(each),maximum)
+    #print(each)
 
 
 print(maximum)
